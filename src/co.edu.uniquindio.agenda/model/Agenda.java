@@ -853,5 +853,112 @@ public class Agenda {
 		return cantidadEspaciosRestantes;
 	}
 
-	
+	/** PUNTO PARCIAL**/
+	/*
+	Devolver una lista de contactos que su nombre inicie en vocal y pertenezcan a al menos
+	a un grupo que termine en consonante.
+	NOTA: no se permiten elementos nulos en el arreglo que va a retornar.
+
+	 */
+
+	public Contacto [] obtenerListaContactos(){
+
+		Contacto [] list = new Contacto [determinarCantidadCumple()];
+		int contador = 0;
+		if (listaContactos!=null){
+			for (int i=0;i<listaContactos.length;i++){
+				if (listaContactos[i]!=null){
+					if ((listaContactos[i].determinarNombreCumple())){
+						if (listaContactos[i].determinarGrupoCumple()){
+							list[contador]= listaContactos[i];
+							contador+=1;
+
+						}
+					}
+				}
+			}
+		}
+		return list;
+	}
+	public int determinarCantidadCumple (){
+		int contador = 0;
+		boolean cumpleLetraInicial = false;
+		if (listaContactos!=null){
+			for (int i=0;i<listaContactos.length;i++){
+				if (listaContactos[i]!=null){
+					cumpleLetraInicial = listaContactos[i].determinarNombreCumple();
+					if (){
+						if (listaContactos[i].determinarGrupoCumple()){
+							contador+=1;
+
+						}
+					}
+				}
+			}
+		}
+		return contador;
+	}
+
+
+
+	/*** don PARRA LISTA VOCALES CONSONANTES **/
+
+	public boolean esVocal (char c){
+
+		String vocalesStr = "aeiouAEIOU";
+		char [] vocales = vocalesStr.toCharArray();
+
+		for (char vocal: vocales
+			 ) {
+
+			if (c == vocal)
+				return true;
+		}
+		return  false;
+	}
+
+	public int obtenerTamanioLista(){
+		int size = 0;
+
+		for (Contacto contacto : this.listaContactos
+			 ) {
+			if (esVocal(contacto.getNombre().charAt(0)) &&
+				perteneceAGrupoConsonante(contacto)){
+				size++;
+			}
+		}
+		return size;
+
+
+
+	}
+
+	private boolean perteneceAGrupoConsonante(Contacto contacto) {
+
+		for (Grupo grupo: contacto.getListaGruposContacto()
+			 ) {
+
+			if (!esVocal(grupo.getNombre().charAt(grupo.getNombre().length()-1)))
+				return true;
+		}
+		return false;
+	}
+
+	public Contacto[] obtenerListaCond(){
+		int listSize = obtenerTamanioLista();
+		Contacto [] lista =new Contacto[listSize];
+
+		int pos = 0; // index para meter elementos dentro de listsSize.
+
+		for (Contacto contacto : this.listaContactos
+			 ) {
+
+			if (esVocal(contacto.getNombre().charAt(0)) &&
+					perteneceAGrupoConsonante(contacto)) {
+				lista[pos] = contacto;
+			}
+		}
+		return lista;
+	}
+
 }

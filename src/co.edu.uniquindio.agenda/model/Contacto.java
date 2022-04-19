@@ -118,8 +118,51 @@ public class Contacto {
 				+ Arrays.toString(listaGruposContacto) + ", listaCitasContacto=" + Arrays.toString(listaCitasContacto)
 				+ "]";
 	}
-	
 
+	public boolean determinarEmpiezaVocal (String nombre){
+		boolean esVocal = false;
+		String vocales = "aeiou";
+		if (nombre != null){
+			for (int i=0;i<vocales.length();i++){
+				if (vocales.charAt(i)== nombre.charAt(0)){
+					esVocal = true;
+				}
+			}
+
+		}
+		return esVocal;
+	}
+	public  boolean determinarTerminaConsonante (String nombre){
+		boolean esVocal = true;
+		String vocales = "aeiou";
+		for (int i=0;i<vocales.length();i++){
+			if (vocales.charAt(i)== nombre.charAt(nombre.length()-1)){
+				esVocal = false;
+			}
+		}
+		boolean esConsonante = !esVocal;
+		return esConsonante;
+	}
+	public boolean determinarGrupoCumple (){
+		boolean cumple = false;
+		if (listaGruposContacto != null){
+			for (int i=0;i<listaGruposContacto.length;i+=1){
+				if (listaGruposContacto[i]!=null){
+					if (determinarTerminaConsonante(listaGruposContacto[i].getNombre())){
+						cumple = true;
+					}
+				}
+			}
+		}
+		return cumple;
+	}
+	public boolean determinarNombreCumple (){
+		boolean cumpleNombre = false;
+		if (nombre != null){
+			cumpleNombre = determinarEmpiezaVocal(nombre);
+		}
+		return cumpleNombre;
+	}
 
 
 }
