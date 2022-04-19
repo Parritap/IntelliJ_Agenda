@@ -6,10 +6,10 @@ public class StringVacioException extends Exception {
         super (mensaje);
     }
 
-//Comentario X
-    // LOL.
+
     public  StringVacioException (){
         super ();
     }
+
 
 }
