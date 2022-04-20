@@ -3,6 +3,7 @@ package co.edu.uniquindio.agenda.model;
 import java.util.Arrays;
 
 import co.edu.uniquindio.agenda.exceptions.ContactoExcepction;
+import co.edu.uniquindio.agenda.exceptions.NombreConDigitosException;
 
 public class Agenda {
 
@@ -102,7 +103,35 @@ public class Agenda {
 	 */
 	public String crearContacto(String nombre, String correo,String direccion,
 							  int edad,String telefono,int tamanioListaGruposContacto,
-							  int tamanioListaCitasContacto,Agenda agenda) {
+							  int tamanioListaCitasContacto,Agenda agenda)  {
+
+		Verificaciones verif = new Verificaciones();
+
+	//	try {
+	//		//Verificaciones de nombre.
+	//		verif.verificarNombreConDigitos(nombre);
+	//		verif.verificarSiStringLlenoEspacios(nombre);
+	//		verif.verificarSiStringVacio(nombre);
+//
+	//		//Verificaciones de correo
+	//		verif.verificarSiStringLlenoEspacios(correo);
+	//		verif.verificarSiStringVacio(correo);
+//
+	//		//verificaciones de dirección
+	//		verif.verificarSiStringLlenoEspacios(direccion);
+	//		verif.verificarSiStringVacio(direccion);
+//
+	//		//Verificaciones de edad
+	//		verif.verificarEdad(edad);
+//
+	//		//verificaciones de telefono
+	//		verif.verificarSiStringVacio(telefono);
+	//		verif.verificarSiStringLlenoEspacios(telefono);
+	//		verif.verificarTelefono();
+	//	}
+
+			//Verifications de dirección
+
 		String mensaje = "El contacto fue creado";
 		int posicionDisponible = 0;
 		boolean existeContacto = false;
@@ -861,6 +890,7 @@ public class Agenda {
 
 	 */
 
+	/*
 	public Contacto [] obtenerListaContactos(){
 
 		Contacto [] list = new Contacto [determinarCantidadCumple()];
@@ -880,6 +910,9 @@ public class Agenda {
 		}
 		return list;
 	}
+
+	/*
+
 	public int determinarCantidadCumple (){
 		int contador = 0;
 		boolean cumpleLetraInicial = false;
@@ -898,6 +931,8 @@ public class Agenda {
 		}
 		return contador;
 	}
+
+	 */
 
 
 

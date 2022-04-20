@@ -1,21 +1,24 @@
 package co.edu.uniquindio.agenda.test;
 
+import co.edu.uniquindio.agenda.exceptions.NombreConDigitosException;
+import co.edu.uniquindio.agenda.model.Verificaciones;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class RandomTest {
 
-    public static void main(String[] args) {
+    private static final String EXAMPLE_TEST = "Hola Mundo";
 
+    public static void main(String[] args) throws NombreConDigitosException {
 
-        String str = "\0";
+        String a = "";
 
-        if (str.equals("\0"))
-            System.out.println( "Vacio");
+        String b = "";
 
-        else {
-            System.out.println("No está vacio");
-        }
+        System.out.println(a.equals(b));
 
-        char c = str.charAt(0);
-        System.out.println(c);
 
     }
+
 }
