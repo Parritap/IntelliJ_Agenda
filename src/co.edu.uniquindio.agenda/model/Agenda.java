@@ -812,7 +812,7 @@ public class Agenda {
         }
         return mensaje;
     }
-Z|
+
     public String actualizarGrupo(Grupo grupo, String nombre, Cita[] listaCitasGrupo, Contacto[] listaContactosGrupo, Agenda agenda) {
         String mensaje = "no hay una lista de grupos definida aún";
         if (listaGrupos != null) {
@@ -828,7 +828,7 @@ Z|
         }
         return mensaje;
     }
-
+// INTELLLIJ IDEA ULTIMATE   :)
     /**
      * Método que elimina un grupo. En realidad lo que see hace es dejar nulos todos los atributos que posee grupo.
      *
@@ -943,6 +943,7 @@ Z|
         }
         return respuesta;
     }
+
 
     /**
      * Método que verifca si la agenda está llena.
