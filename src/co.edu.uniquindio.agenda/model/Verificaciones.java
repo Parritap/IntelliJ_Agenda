@@ -1,7 +1,12 @@
 package co.edu.uniquindio.agenda.model;
 
 
-import co.edu.uniquindio.agenda.exceptions.*;
+
+import co.edu.uniquindio.agenda.exceptions.EdadNegativaException;
+import co.edu.uniquindio.agenda.exceptions.NombreConDigitosException;
+import co.edu.uniquindio.agenda.exceptions.StringLlenoEspacios;
+import co.edu.uniquindio.agenda.exceptions.StringVacioException;
+
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -30,7 +35,7 @@ public class Verificaciones {
      * @param edad Edad.
      * @throws EdadNegativaException Excepción lanzada en caso de que la edad sea negativa.
      */
-    public void verificarEdad (int edad) throws EdadNegativaException {
+    public void verificarEdadNegativa(int edad) throws EdadNegativaException {
         if (edad < 0){
             throw new EdadNegativaException();
         }
@@ -73,16 +78,5 @@ public class Verificaciones {
         throw new NombreConDigitosException();
       }
     }
-
-
-    public void verificarTelefono (String telefono) throws  TelefonoConNoDigitosException{
-        boolean tieneNoDigitos = matchesRegex("(.)*(\\D)(.)*", telefono);
-
-        if (tieneNoDigitos){
-            throw new TelefonoConNoDigitosException();
-        }
-    }
-
-
 
 }

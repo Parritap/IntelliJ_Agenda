@@ -13,18 +13,15 @@ public class Contacto {
 	private Agenda agenda;
 	private Grupo [] listaGruposContacto;
 	private Cita [] listaCitasContacto;
-	/**
-	 *
-	 * @param nombre
-	 * @param correo
-	 * @param direccion
-	 * @param telefono
-	 */
-	
 
+	
 
 	public String getNombre() {
 		return nombre;
+	}
+
+	public Contacto (String nombre){
+		this.nombre = nombre;
 	}
 
 	public Contacto(String nombre, String correo, String direccion, int edad, String telefono,
@@ -47,6 +44,20 @@ public class Contacto {
 		this.edad = edad;
 		this.telefono = telefono;
 		this.agenda = agenda;
+	}
+
+	public Contacto(String nombre, String correo, String direccion, int edad, String telefono,
+					Grupo [] listaGruposContacto, Cita [] listaCitasContacto, Agenda agenda) {
+		super();
+		this.nombre = nombre;
+		this.correo = correo;
+		this.direccion = direccion;
+		this.edad = edad;
+		this.telefono = telefono;
+		this.listaGruposContacto = listaGruposContacto;
+		this.listaCitasContacto = listaCitasContacto;
+		this.agenda = agenda;
+
 	}
 
 	public void setNombre(String nombre) {
